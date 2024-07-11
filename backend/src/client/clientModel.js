@@ -11,10 +11,6 @@ var clientSchema = new Schema({
         require: true,
         unique: true
     },
-    phone: {
-        type: Number,
-        require: true
-    },
     password: {
         type: String,
         require: true

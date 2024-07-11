@@ -14,7 +14,6 @@ module.exports.createClientService = async (clientDetail) => {
         const clientModelData = new clientModel({
             name: clientDetail.name,
             email: clientDetail.email,
-            phone: clientDetail.phone,
             password: encryptor.encrypt(clientDetail.password)
         });
 
