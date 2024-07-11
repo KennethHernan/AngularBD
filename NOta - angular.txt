@@ -1,0 +1,8 @@
+--CREAR NEW APP (CLI)
+ng new mi-primera-app
+
+--Correr Servidor(CLI)
+ng serve -o
+
+--Crear components (Header):
+ng g c components/partials/header
