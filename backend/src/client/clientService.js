@@ -4,26 +4,25 @@ var encryptor = require('simple-encryptor')(key);
 
 module.exports.createClientService = async (clientDetail) => {
     try {
-        if (typeof clientDetail.password !== 'string') {
-            console.error('Error: Password is not a string');
-            return false;
-        }
-
-        const clientModelData = new clientModel({
-            name: clientDetail.name,
-            email: clientDetail.email,
-            password: encryptor.encrypt(clientDetail.password)
-        });
-
-        console.log('Client data before saving:', clientModelData);
-
-        await clientModelData.save();
-        console.log('Creating client');
-
-        return true;
+        const result = await clientModel.findOne({ email: clientDetail.email }).exec();
+            if(result) {
+                console.log('Email Existente');
+                return { status: false, msg: "Email Existente"};
+            } else{
+                const clientModelData = new clientModel({
+                    name: clientDetail.name,
+                    email: clientDetail.email,
+                    password: encryptor.encrypt(clientDetail.password)
+                });
+        
+                console.log('Cliente Datos:', clientModelData);
+        
+                await clientModelData.save();
+                return { status: true, msg: "Usuario Creado" };
+            }
     } catch (error) {
-        console.error('Error creating client:', error);
-        return false;
+        console.error('Error en el Register del usuario:', error);
+        return { status: false, msg: "Error al crear usuario" };
     }
 };
 
@@ -32,16 +31,18 @@ module.exports.loginClientService = async (clientDetail) => {
         const result = await clientModel.findOne({ email: clientDetail.email }).exec();
             if(result) {
                 const decrypted = encryptor.decrypt(result.password);
-                if (decrypted === clientDetail.password) {
-                    return { status: true, msg: "Cliente Valido" };
+                
+                if (decrypted == clientDetail.password) {
+                    return { status: true, msg: "Bienvenido" };
                 } else {
                     return { status: false, msg: "Contraseña Incorrecta" };
                 }
             } else{
-                return { status: false, msg: "Email Incorrecto" };
+                
+                return { status: false, msg: "Email Incorrecto"};
             }
     } catch (error) {
-        console.error('Error en el login del cliente:', error);
+        console.error('Error en el login del usuario:', error);
         return { status: false, msg: "Datos Invalidos" };
     }
 };

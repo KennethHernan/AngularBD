@@ -5,17 +5,17 @@ var createClientController = async (req, res) => {
     {
         console.log(req.body);
         var status = await clientService.createClientService(req.body);
-        console.log(status);
         
-        if (status) {
-            res.send({ "status": true, "menssage": "Cliente Creado" });
+        console.log('ESTATUS: '+status.status);
+        if (status.status) {
+            res.send({ "status": true, "message": status.msg });
         } else {
-            res.send({ "status": false, "menssage": "Error al crear cliente" });
+            res.send({ "status": false, "message": status.msg });
         }
     } catch(err)
     {
-        console.log(err);
-        res.status(500).send("Error interno del servidor");
+        console.error('Error en el controlador de Registro:', err);
+        res.status(500).send({ "status": false, "message": "Error en el servidor" });
     }
 };
 
@@ -24,9 +24,8 @@ const loginClientController = async (req, res) => {
     {
         console.log(req.body);
         var status = await clientService.loginClientService(req.body);
-        console.log(status);
 
-        if (status) {
+        if (status.status) {
            res.send({ "status":true, "message": status.msg });
         } else {
             res.send({ "status":false, "message": status.msg });

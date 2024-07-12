@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background: url(https://storage.googleapis.com/devioz-images/hero/slide-1.jpg);
+    margin: 0;
+    padding: 0;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-style: normal;
+}

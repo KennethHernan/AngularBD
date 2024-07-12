@@ -1,12 +1,30 @@
-<div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="save()">
-        <label for="email">Email:</label>
-        <input type="email" [(ngModel)]="email"  id="email" name="email" required>
-
-        <label for="password">Password:</label>
-        <input type="password" [(ngModel)]="password"  id="password" name="password" required>
-
-        <button type="submit">Login</button>
-    </form>
+<div class="Fondo">
+    <div class="banner">
+        <img src="https://devioz.com/images/Logo.webp" alt="">
+        <div class="banner-text">
+            <p class="title">Bienvenido a <b>Devioz</b></p>
+            <p class="parrafo">Somos una empresa de desarrollo de software,
+                especializada en el desarrollo de aplicaciónes móviles 
+                y web.</p>
+        </div>
+    </div>
+    <div class="content-fomrs">
+        <div class="login-container">
+            <p class="sub">COMENCEMOS</p>
+            <p class="tit">Inicia Sesión</p>
+            <form (ngSubmit)="save()">
+                <div class="label">
+                    <p>Correo Electrónico</p>
+                    <input type="email" [(ngModel)]="email"  id="email" name="email" required>
+                </div>
+                <div class="label">
+                    <p>Contraseña</p>
+                    <input type="password" [(ngModel)]="password"  id="password" name="password" required>
+                </div>
+        
+                <button type="submit">Iniciar Sesión</button>
+                <p *ngIf="message" [ngClass]="'Alert'+' '+messageType">{{ message }}</p>
+            </form>
+        </div>
+    </div>
 </div>
