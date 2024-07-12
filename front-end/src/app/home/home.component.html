@@ -4,11 +4,32 @@
         <div class="banner-text">
             <p class="title">Bienvenido a <b>Devioz</b></p>
             <p class="parrafo">Somos una empresa de desarrollo de software,
-                especializada en el desarrollo de aplicaciónes móviles 
+                especializada en el desarrollo de aplicaciónes móviles
                 y web.</p>
         </div>
     </div>
     <div class="content-fomrs">
-        <app-login></app-login>
+
+      <button routerLink="/login" >Salir</button>
+      <div class="login-container">
+        <p class="sub">Lisado de</p>
+        <p class="tit">Usuarios Registrados</p>
+        <table class="table">
+          <thead>
+            <tr class="header-table">
+              <th>id</th>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let users of users">
+              <td>{{ users._id }}</td>
+              <td>{{ users.name }}</td>
+              <td>{{ users.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
     </div>
 </div>

@@ -2,6 +2,16 @@ var clientModel = require('../client/clientModel');
 var key = '1234567890abcdefgh';
 var encryptor = require('simple-encryptor')(key);
 
+module.exports.getAllClientsService = async () => {
+    try {
+        const result = await clientModel.find().exec();
+        return { status: true, data: result };
+    } catch (error) {
+        console.error('Error al obtener usuarios:', error);
+        return { status: false, msg: "Error al obtener usuarios" };
+    }
+};
+
 module.exports.createClientService = async (clientDetail) => {
     try {
         const result = await clientModel.findOne({ email: clientDetail.email }).exec();

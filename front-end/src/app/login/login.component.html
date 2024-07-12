@@ -4,7 +4,7 @@
         <div class="banner-text">
             <p class="title">Bienvenido a <b>Devioz</b></p>
             <p class="parrafo">Somos una empresa de desarrollo de software,
-                especializada en el desarrollo de aplicaciónes móviles 
+                especializada en el desarrollo de aplicaciónes móviles
                 y web.</p>
         </div>
     </div>
@@ -21,10 +21,14 @@
                     <p>Contraseña</p>
                     <input type="password" [(ngModel)]="password"  id="password" name="password" required>
                 </div>
-        
+
                 <button type="submit">Iniciar Sesión</button>
-                <p *ngIf="message" [ngClass]="'Alert'+' '+messageType">{{ message }}</p>
-            </form>
+                <p *ngIf="message" [ngClass]="'Alert'+' '+messageType">{{ message+" *" }}</p>
+
+                <div class="login-redireccion">
+                  <p>¿No tienes cuenta existente? <a routerLink="/register"><b>Registrarse</b></a></p>
+                </div>
+              </form>
         </div>
     </div>
 </div>

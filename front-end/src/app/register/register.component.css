@@ -51,7 +51,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 28px;
-  
+
   color: #FFFFFF;
 }
 .content-fomrs{
@@ -148,3 +148,22 @@ p.false {
   color: red;
   font-size: 11px;
 }
+a{
+  text-decoration: none;
+}
+.login-redireccion{
+  margin-top: 30px;
+  border-top: 1px solid #ADADAD;
+  padding-top: 10px;
+  font-size: 13px;
+  width: 100%;
+}
+.login-redireccion a{
+  font-size: 13px;
+  font: bolt;
+  color: #084d4e;
+}
+.login-redireccion p{
+  text-align:center;
+}
+

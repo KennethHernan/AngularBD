@@ -1,0 +1,132 @@
+.Fondo {
+  background: linear-gradient(46.33deg, rgba(33, 33, 33, 0.839216) 0%, rgba(66, 66, 66, 0.239216) 178.98%);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.banner{
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 2%;
+  user-select: none;
+}
+.banner img{
+  width: 50%;
+  margin-bottom: 100px;
+}
+.banner-text{
+  width: 85%;
+  color: #fff;
+  margin-top: 50px;
+}
+.banner-text p{
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.title{
+  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 47px;
+}
+.title b{
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 47px;
+}
+.parrafo{
+  margin-top: 100px;
+  font-weight: 300;
+  font-size: 14px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+
+  color: #FFFFFF;
+}
+.content-fomrs{
+  position:relative;
+  width: 600px;
+  height: 80%;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 30px;
+}
+/*---*/
+.login-container {
+  width: auto;
+  height: auto;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.sub{
+  font-weight: 400;
+  font-size: 11px;
+  padding: 0;
+  margin: 0;
+  color: #757575;
+  user-select: none;
+}
+.tit{
+  font-weight: 400;
+  font-size: 23px;
+  margin: 0;
+  padding: 10px 0 20px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #B9B9B9;
+  user-select: none;
+}
+
+table{
+  border-bottom: 2px solid #B9B9B9;
+  border-collapse: collapse;
+  text-align: left;
+}
+table th{
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+table td{
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.header-table th {
+  border-bottom: 2px solid #B9B9B9;
+  font-size: 15px;
+  padding: 10px;
+}
+
+button {
+  width: auto;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #002F2D 0%, #14797F 100%);
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12.8px;
+  user-select: none;
+  position: absolute;
+  top: 25px;
+  right:25px;
+}
+button:hover {
+  background: linear-gradient(90deg, #002F2D 0%, #14797F 70%);
+}
