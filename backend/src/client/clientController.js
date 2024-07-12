@@ -27,9 +27,9 @@ const loginClientController = async (req, res) => {
         console.log(status);
 
         if (status) {
-            res.status(200).send({ "status": true, "message": "Cliente autenticado" });
+           res.send({ "status":true, "message": status.msg });
         } else {
-            res.status(401).send({ "status": false, "message": "Credenciales incorrectas" });
+            res.send({ "status":false, "message": status.msg });
         }
     } catch (error) {
         console.error('Error en el controlador de login:', error);

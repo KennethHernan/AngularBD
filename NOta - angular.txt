@@ -1,6 +1,9 @@
 --CREAR NEW APP (CLI)
 ng new mi-primera-app
 
+--CREAR NEW APP (CLI) con module
+ng new mi-primera-app --standalone=false
+
 --Correr Servidor(CLI)
 ng serve -o
 

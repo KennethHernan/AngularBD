@@ -1,6 +1,4 @@
-const { rejects } = require('assert');
 var clientModel = require('../client/clientModel');
-const { resolve } = require('path');
 var key = '1234567890abcdefgh';
 var encryptor = require('simple-encryptor')(key);
 
